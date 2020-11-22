@@ -30,7 +30,7 @@ The plugin includes web portal controls to set traits during chargen and view th
 ## Installation
 
 1. Unless you are planning to use traits in conjunction with FS3, you probably want to disable the FS3 plugins, as explained in [Enabling and Disabling Plugins](https://aresmush.com/tutorials/config/plugins/).
-2. In the game, run `plugin/install traits`.
+2. In the game, run `plugin/install <github url>`.
 3. Go to Admin->Setup and change your [chargen stages](https://aresmush.com/tutorials/config/chargen.html).  Replace the FS3 stages with a stage for traits:
 
 Old:
