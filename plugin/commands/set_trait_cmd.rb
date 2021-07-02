@@ -27,15 +27,21 @@ module AresMUSH
       
       def handle
         ClassTargetFinder.with_a_character(self.name, client, enactor) do |model|
-          if (enactor.name == model.name || Chargen.can_approve?(enactor))
-            traits = model.traits || {}
-            traits[self.trait_name] = self.description
-            model.update(traits: traits)
-            client.emit_success t('traits.trait_set')
-          else
+          if (!Traits.can_edit_traits?(enactor, model))
             client.emit_failure t('dispatcher.not_allowed')
+            return
           end
-                    
+          
+          error = Traits.check_traits_locked(enactor, model)
+          if (error)
+            client.emit_failure error
+            return
+          end
+          
+          traits = model.traits || {}
+          traits[self.trait_name] = self.description
+          model.update(traits: traits)
+          client.emit_success t('traits.trait_set')
         end
       end
     end

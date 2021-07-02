@@ -64,7 +64,7 @@ Note: If you are using _just_ traits (without any other skills system), you prob
 
 ## Uninstalling
 
-Removing the plugin requires some code fiddling.  See [Uninstalling Plugins](https://www.aresmush.com/tutorials/code/extras.html#uninstalling-plugins).
+Removing the plugin requires some code fiddling.  See [Uninstalling Traits](Uninstalling.md).
 
 ## License
 
