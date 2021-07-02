@@ -6,8 +6,6 @@
 
 Designed for AresMUSH 1.0
 
-> Note: This code has been run through its paces on a test server, but hasn't been playtested much on a real game yet.   The first game to implement this will receive extra technical support from Faraday to iron out any bugs.
-
 ## Overview
 
 The traits system provides a simple way to store character stats with a name/description, as one might find on comic games.
