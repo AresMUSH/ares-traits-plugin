@@ -2,8 +2,8 @@
 
      {{#each this.model.char.traits as |trait|}}
      <b><Input @type="text" @value={{trait.name}} size={{25}} /></b> 
-     <button class="btn btn-default" {{action 'removeTrait' trait.name}}><i class="fa fa-trash" aria-label="Remove Trait"></i></button>
+     <button class="btn btn-default" {{on 'click' (fn this.removeTrait trait.name)}}><i class="fa fa-trash" aria-label="Remove Trait"></i></button>
      <Textarea @value={{trait.desc}} cols={{80}} rows={{5}} />
      {{/each}}
 
-     <button class="btn btn-default" id="addtrait" {{action 'addTrait'}}>Add Trait</button>
+     <button class="btn btn-default" id="addtrait" {{on 'click' this.addTrait}}>Add Trait</button>

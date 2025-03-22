@@ -15,15 +15,7 @@ Ares plugins plug IN easily, but taking them out requires a bit of code fiddling
 3. Add the following code to the `handle` method of the tinker file.
  
 ```
-   begin 
-      Traits.uninstall_plugin
-      Manage.uninstall_plugin("traits")
-      client.emit_success "Plugin uninstalled."
-      
-    rescue Exception => e
-      Global.logger.debug "Error loading plugin: #{e}  backtrace=#{e.backtrace[0,10]}"
-      client.emit_failure "Error uninstalling plugin: #{e}"
-    end
+    Traits.uninstall_plugin(client)
 ```
 
 4. Click "Save" on the tinker page.
@@ -38,6 +30,4 @@ Ares plugins plug IN easily, but taking them out requires a bit of code fiddling
     * Web portal files - See the /webportal folder in this repo for a specific list of files.
 
 
-8. Run the `load all` command.
-
-9. Run the `website/deploy` command.
+8. [Restart the game engine](https://aresmush.com/tutorials/manage/shutdown.html).

@@ -13,10 +13,17 @@ module AresMUSH
       return Chargen.check_chargen_locked(model)
     end
     
-    def self.uninstall_plugin
-      Character.all.each do |c|
-        c.update(traits: nil)
-      end
+    def self.uninstall_plugin(client)
+      begin 
+        Character.all.each do |c|
+          c.update(traits: nil)
+        end        
+         Manage.uninstall_plugin("traits")
+         client.emit_success "Plugin uninstalled."
+      
+       rescue Exception => e
+         client.emit_failure "Error uninstalling plugin: #{e} backtrace=#{e.backtrace[0,10]}"
+       end
     end
     
   end
