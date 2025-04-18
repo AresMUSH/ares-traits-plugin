@@ -10,7 +10,8 @@ export default Component.extend({
   },
   onUpdate: function() {
     let extras = this.get('model.app.game.extra_plugins');
-    if (!extras.any(e => e === 'traits')) {
+
+    if (!extras.some(e => e === 'traits')) {
       return {};
     }
 
