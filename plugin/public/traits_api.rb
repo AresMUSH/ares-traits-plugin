@@ -2,7 +2,7 @@ module AresMUSH
   module Traits
     def self.save_char(char, chargen_data)
       traits = {}
-      (chargen_data[:traits] || {}).each do |name, desc|
+      (chargen_data['traits'] || {}).each do |name, desc|
         traits[name.titlecase] = Website.format_input_for_mush(desc)
       end
       char.update(traits: traits)
