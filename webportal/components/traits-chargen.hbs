@@ -1,9 +1,17 @@
- <p class="cg-tip"><AnsiFormat @text={{this.model.cgInfo.traits_blurb}} /></p>
+<p class="cg-tip"><AnsiFormat @text={{this.model.cgInfo.traits_blurb}} /></p>
 
-     {{#each this.model.char.traits as |trait|}}
-     <b><Input @type="text" @value={{trait.name}} size={{25}} /></b> 
+{{#each this.model.char.traits as |trait|}}
+  <div class="trait-item">
+
+   <div class="trait-meta">
+     <label>Name:</label>
+     <Input class="trait-name" @type="text" @value={{trait.name}} placeholder="Enter Name" />         
      <button class="btn btn-default" {{on 'click' (fn this.removeTrait trait.name)}}><i class="fa fa-trash" aria-label="Remove Trait"></i></button>
-     <Textarea @value={{trait.desc}} cols={{80}} rows={{5}} />
-     {{/each}}
+   </div>
 
-     <button class="btn btn-default" id="addtrait" {{on 'click' this.addTrait}}>Add Trait</button>
+   <label>Description:</label>
+   <Textarea @value={{trait.desc}} cols={{80}} rows={{5}} placeholder="Enter Description" />
+  </div>
+{{/each}}
+
+<button class="btn btn-default" id="addtrait" {{on 'click' this.addTrait}}>Add Trait</button>

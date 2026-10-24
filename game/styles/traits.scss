@@ -1,0 +1,14 @@
+
+.trait-item {
+  border: 1px solid $border-color;
+  margin-top: 15px;
+  padding: 5px;
+}
+
+.trait-meta {
+  display: flex;
+  flex-direction: row;
+  column-gap: 5px;
+  align-items: center;
+  padding: 5px 0px 5px 0px;
+}

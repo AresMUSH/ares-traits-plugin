@@ -1,5 +1,5 @@
 traits:
-    traits_blurb: "Enter your character traits."
+    traits_blurb: "Traits may include skills or other special abilities. Traits do not have ratings, merely a name and a description."
     shortcuts:
         "trait/add": "trait/set"
         "trait/update": "trait/set"

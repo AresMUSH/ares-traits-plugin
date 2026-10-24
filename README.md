@@ -60,6 +60,12 @@ Note: If you are using _just_ traits (without any other skills system), you prob
     custom:
       shortcuts:
           sheet: trait
+          
+## Styles
+
+To add the traits styling to your game, add the following line to `custom_styles.scss`:
+
+`@import 'traits.scss'`
 
 ## Uninstalling
 

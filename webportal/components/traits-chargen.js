@@ -2,6 +2,7 @@ import EmberObject from '@ember/object';
 import Component from '@ember/component';
 import { action } from '@ember/object';
 import { notifyPropertyChange } from '@ember/object';
+import { removeObject } from 'ares-webportal/helpers/object-ext';
 
 export default Component.extend({
   didInsertElement: function() {
@@ -23,7 +24,7 @@ export default Component.extend({
       
   @action
   addTrait() {
-    this.get('model.char.traits').push(EmberObject.create( {name: "Trait Name", desc: "Enter a Description"} ));
+    this.get('model.char.traits').push(EmberObject.create( {name: "", desc: ""} ));
     notifyPropertyChange(this, 'model');
   },
   
@@ -31,7 +32,7 @@ export default Component.extend({
   removeTrait(name) {
     let found = this.get('model.char.traits').find(t => t.name === name);
     if (found) {
-      this.get('model.char.traits').removeObject(found);
+      removeObject(this.get('model.char.traits'), found);
       notifyPropertyChange(this, 'model');
     }
   }

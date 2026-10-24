@@ -27,7 +27,7 @@ module AresMUSH
     end
     
     def self.plugin_version
-      "2.0"
+      "2.1"
     end
     
   end
